@@ -1561,3 +1561,1104 @@ body:has(.gallery-section) {
     flex-direction: column;
   }
 }
+
+/* Hidden Details */
+
+.hidden-details-page {
+  background-color: var(--page-bg);
+  color: var(--text-main);
+}
+
+.hidden-details-page main {
+  overflow-wrap: break-word;
+}
+
+.hidden-details-page section[id] {
+  scroll-margin-top: 6rem;
+}
+
+.hidden-details-page h1,
+.hidden-details-page h2,
+.hidden-details-page h3 {
+  font-family: "IM Fell English", Georgia, serif;
+}
+
+.hidden-details-page h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.15;
+}
+
+.hidden-details-page p {
+  line-height: 1.8;
+}
+
+.hd-eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+}
+
+/* Первый экран */
+
+.hd-hero {
+  position: relative;
+  padding: 10rem 0 5rem;
+  border-bottom: 1px solid var(--border-color);
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      var(--surface-hover),
+      transparent 60%
+    ),
+    var(--page-bg);
+}
+
+.hd-hero h1 {
+  max-width: 900px;
+  margin-bottom: 1.5rem;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 1.02;
+}
+
+.hd-hero-description {
+  max-width: 640px;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+}
+
+.hd-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hd-jump-links a {
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.hd-jump-links a:hover {
+  background-color: var(--surface-hover);
+}
+
+.hd-introduction {
+  max-width: 850px;
+  padding-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Секции */
+
+.hd-section {
+  padding: 4.5rem 0;
+}
+
+.hd-section-heading {
+  max-width: 780px;
+  margin-bottom: 2rem;
+}
+
+.hd-section-heading > p:not(.hd-eyebrow) {
+  color: var(--text-muted);
+}
+
+.hd-surface {
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--surface);
+}
+
+/* Переключение палитр */
+
+.hd-stage-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hd-stage-button {
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  background-color: var(--surface);
+  color: var(--text-main);
+  font: inherit;
+  cursor: pointer;
+}
+
+.hd-stage-button:hover {
+  background-color: var(--surface-hover);
+}
+
+.hd-stage-button[aria-pressed="true"] {
+  background-color: var(--accent-active);
+  border-color: var(--accent-border);
+  color: #fff;
+}
+
+.hd-color-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background-color: var(--surface);
+  overflow: hidden;
+}
+
+.hd-color-figure {
+  min-width: 0;
+  margin: 0;
+  padding: 1.5rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.hd-color-figure img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  object-fit: contain;
+}
+
+.hd-color-figure figcaption {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.hd-color-copy {
+  min-width: 0;
+  padding: 2rem;
+  align-self: center;
+}
+
+.hd-color-copy h3 {
+  margin: 1rem 0;
+  font-size: 2.2rem;
+}
+
+.hd-color-copy > p {
+  color: var(--text-muted);
+}
+
+.hd-tag {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.hd-palette-label {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.hd-palette {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding: 0;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.hd-swatch-color {
+  display: block;
+  height: 52px;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.hd-swatch-name {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.hidden-details-page .hd-small-note {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* Костюмы */
+
+.hd-costume-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 3rem;
+}
+
+.hd-costume-image {
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background-color: var(--page-bg);
+}
+
+.hd-costume-image img {
+  display: block;
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+
+.hd-costume-image figcaption {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.hd-costume-notes article {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hd-costume-notes article:first-child {
+  padding-top: 0;
+}
+
+.hd-note-number {
+  padding-top: 0.2rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.hd-costume-notes h3 {
+  font-size: 1.65rem;
+}
+
+.hd-costume-notes p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+/* Сравнение двух мам */
+
+.hd-mothers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.hd-mother {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background-color: var(--surface);
+  overflow: hidden;
+}
+
+.hd-mother-image {
+  padding: 1.25rem;
+}
+
+.hd-mother-image img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border-radius: 0.65rem;
+  background-color: #fff;
+  object-fit: contain;
+}
+
+.hd-mother-copy {
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+.hd-mother-copy h3 {
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.hd-mother-copy p {
+  color: var(--text-muted);
+}
+
+.hd-reading {
+  max-width: 850px;
+  margin: 2.5rem auto 0;
+}
+
+.hd-reading h3 {
+  font-size: 1.8rem;
+}
+
+.hd-reading p {
+  color: var(--text-muted);
+}
+
+/* Раскрывающиеся вопросы */
+
+.hd-questions {
+  max-width: 900px;
+}
+
+.hd-questions details {
+  border-bottom: 1px solid var(--border-hover);
+}
+
+.hd-questions summary {
+  padding: 1.35rem 0;
+  color: var(--text-main);
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.hd-question-content {
+  padding: 0.25rem 0 1.5rem;
+}
+
+.hd-question-content .hd-tag {
+  margin-bottom: 1rem;
+}
+
+.hd-question-content p {
+  max-width: 780px;
+  color: var(--text-muted);
+}
+
+/* Источники */
+
+.hd-sources {
+  padding-bottom: 2rem;
+}
+
+.hd-sources p,
+.hd-sources li {
+  color: var(--text-muted);
+}
+
+.hd-sources li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.hd-sources a {
+  color: var(--text-main);
+  text-underline-offset: 4px;
+}
+
+/* Доступность */
+
+.hidden-details-page a:focus-visible,
+.hd-stage-button:focus-visible,
+.hd-questions summary:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+.hd-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Мобильный вид */
+
+@media (max-width: 767px) {
+  .hd-hero {
+    padding: 8rem 0 3rem;
+  }
+
+  .hd-section {
+    padding: 3rem 0;
+  }
+
+  .hd-color-panel,
+  .hd-costume-layout,
+  .hd-mothers {
+    grid-template-columns: 1fr;
+  }
+
+  .hd-color-figure {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .hd-color-copy {
+    padding: 1.5rem;
+  }
+
+  .hd-color-figure img {
+    height: 280px;
+  }
+
+  .hd-costume-image img {
+    height: 340px;
+  }
+
+  .hd-costume-layout {
+    gap: 2rem;
+  }
+
+  .hd-stage-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hd-stage-button {
+    padding: 0.65rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Такой же непрерывный фон, как на Home и Other World */
+
+body.hidden-details-page,
+body.story-page {
+  background-color: var(--page-bg);
+  background-image: repeating-linear-gradient(
+    125deg,
+    transparent 0,
+    transparent 180px,
+    var(--pattern-color) 181px,
+    transparent 183px
+  );
+  background-attachment: fixed;
+}
+
+/* Убираем фоновые полосы и границы между секциями */
+
+.hidden-details-page .hd-hero,
+.hidden-details-page .hd-section,
+.hidden-details-page .hd-surface,
+.story-page .story-section,
+.story-page .story-surface {
+  background: transparent;
+  border: none;
+}
+
+/* Более компактное начало Hidden Details */
+
+.hidden-details-page .hd-hero {
+  padding: 7rem 0 1.5rem;
+}
+
+.hidden-details-page .hd-hero h1 {
+  max-width: 900px;
+  margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+}
+
+.hidden-details-page .hd-hero-description {
+  max-width: 780px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.hidden-details-page .hd-jump-links {
+  margin-top: 1.25rem;
+}
+
+.hidden-details-page .hd-introduction {
+  margin-bottom: 0;
+  padding-top: 0.5rem;
+}
+
+/* Уменьшаем расстояния между разделами */
+
+.hidden-details-page .hd-section,
+.story-page .story-section {
+  padding: 2rem 0;
+}
+
+.hidden-details-page .hd-section-heading,
+.story-page .story-section-heading {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .hidden-details-page .hd-hero {
+    padding-top: 6rem;
+  }
+
+  .hidden-details-page .hd-section,
+  .story-page .story-section {
+    padding: 1.5rem 0;
+  }
+}
+.hd-color-figure video {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border-radius: 0.75rem;
+  background-color: #100d1c;
+  object-fit: contain;
+}
+
+.hd-color-figure [hidden] {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .hd-color-figure video {
+    height: 280px;
+  }
+}
+
+.hd-costume-image img {
+  background-color: transparent;
+}
+
+.hd-mother-image video {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border-radius: 0.65rem;
+  background-color: transparent;
+  object-fit: contain;
+}
+.hidden-details-page main {
+  padding-top: 6rem;
+}
+
+.hidden-details-page .hd-hero {
+  padding-top: 1rem;
+}
+.hidden-details-page .hd-section-heading {
+  margin-bottom: 1rem;
+}
+
+.hidden-details-page .hd-section-heading h2 {
+  margin-bottom: 0.75rem;
+}
+
+.hidden-details-page .hd-introduction {
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.hidden-details-page .hd-stage-buttons {
+  margin-top: 1rem;
+}
+
+/* Behind the Story */
+
+.story-page {
+  background-color: var(--page-bg);
+  color: var(--text-main);
+}
+
+.story-page main {
+  overflow-wrap: break-word;
+}
+
+.story-page section[id] {
+  scroll-margin-top: 6rem;
+}
+
+.story-page h1,
+.story-page h2,
+.story-page h3 {
+  font-family: "IM Fell English", Georgia, serif;
+}
+
+.story-page h2 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+}
+
+.story-page p {
+  line-height: 1.8;
+}
+
+.story-eyebrow {
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.17em;
+  color: var(--text-muted);
+}
+
+/* Первый экран */
+
+.story-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 85vh;
+  min-height: 85svh;
+  padding: 9rem 0 6rem;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 8, 25, 0.96),
+      rgba(12, 8, 25, 0.72) 55%,
+      rgba(12, 8, 25, 0.35)
+    ),
+    url("../images/дверь.jpeg") center 45% / cover no-repeat;
+  color: #f5ebd8;
+}
+
+.story-hero-copy {
+  max-width: 740px;
+}
+
+.story-hero .story-eyebrow {
+  color: #d1b8e6;
+}
+
+.story-hero h1 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.7rem, 6vw, 5.8rem);
+  line-height: 1.04;
+}
+
+.story-hero-description {
+  max-width: 520px;
+  color: #e0d5eb;
+  font-size: 1.15rem;
+}
+
+.story-hero-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding-block: 0.5rem;
+  color: #f5ebd8;
+  text-underline-offset: 6px;
+}
+
+.story-hero-link:hover {
+  color: #fff;
+}
+
+.story-hero-note {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1rem;
+  color: #e0d5eb;
+  font-size: 0.75rem;
+}
+
+/* Общие секции */
+
+.story-section {
+  padding: 5rem 0;
+}
+
+.story-section-heading {
+  max-width: 780px;
+  margin-bottom: 2.5rem;
+}
+
+.story-section-heading > p:not(.story-eyebrow) {
+  color: var(--text-muted);
+}
+
+.story-surface {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.story-editorial-grid,
+.story-craft-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+  gap: 4rem;
+}
+
+.story-editorial-grid > *,
+.story-craft-grid > * {
+  min-width: 0;
+}
+
+.story-editorial-grid p,
+.story-craft-grid p {
+  color: var(--text-muted);
+}
+
+.story-page .story-lead {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+/* Этапы истории */
+
+.story-milestones {
+  border-left: 1px solid var(--border-hover);
+  padding-left: 2rem;
+}
+
+.story-milestones article + article {
+  margin-top: 2rem;
+}
+
+.story-year {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+}
+
+.story-milestones h3 {
+  font-size: 1.7rem;
+}
+
+/* Авторы без обычных карточек */
+
+.story-people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.story-person {
+  border-top: 1px solid var(--border-hover);
+  padding-top: 1.5rem;
+}
+
+.story-role {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+}
+
+.story-person h3 {
+  font-size: 2rem;
+}
+
+.story-person > p:not(.story-role) {
+  color: var(--text-muted);
+}
+
+.story-person a,
+.story-inline-link,
+.story-sources a {
+  color: var(--text-main);
+  text-underline-offset: 5px;
+}
+
+.story-person a:hover,
+.story-inline-link:hover,
+.story-sources a:hover {
+  color: var(--text-muted);
+}
+
+/* Кадр фильма */
+
+.story-film-figure {
+  margin: 0;
+}
+
+.story-film-figure img {
+  display: block;
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.story-film-figure figcaption {
+  margin-top: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Пример покадрового движения */
+
+.frame-workshop {
+  max-width: 850px;
+  margin-inline: auto;
+  border: 1px solid var(--border-hover);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.frame-stage {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at center,
+      var(--surface-hover),
+      var(--page-bg)
+    );
+}
+
+.frame-ground {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 48px;
+  height: 1px;
+  background-color: var(--border-hover);
+}
+
+.frame-puppet {
+  position: absolute;
+  bottom: 65px;
+  left: calc(50% - 37px);
+  width: 74px;
+  height: 84px;
+  border: 2px solid #c3924e;
+  border-radius: 45% 45% 40% 40%;
+  background-color: #e8bc70;
+  transform-origin: center bottom;
+}
+
+.frame-eye {
+  position: absolute;
+  top: 26px;
+  width: 15px;
+  height: 15px;
+  border: 3px double #a48bba;
+  border-radius: 50%;
+  background-color: #251733;
+}
+
+.frame-eye-left {
+  left: 14px;
+}
+
+.frame-eye-right {
+  right: 14px;
+}
+
+.frame-smile {
+  position: absolute;
+  left: 25px;
+  bottom: 17px;
+  width: 20px;
+  height: 10px;
+  border-bottom: 2px solid #593b32;
+  border-radius: 50%;
+}
+
+.frame-controls {
+  padding: 1.5rem;
+  background-color: var(--surface);
+}
+
+.frame-controls label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+#frameSlider {
+  display: block;
+  width: 100%;
+  min-height: 32px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.frame-controls-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#frameOutput {
+  color: var(--text-muted);
+}
+
+.story-small-note {
+  max-width: 850px;
+  margin: 1rem auto 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Passion Project */
+
+.story-passion {
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.story-passion h2 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+}
+
+.story-passion > p:not(.story-eyebrow):not(.story-lead) {
+  color: var(--text-muted);
+}
+
+.story-editorial-note {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* Раскрывающиеся вопросы */
+
+.story-questions {
+  max-width: 850px;
+}
+
+.story-questions details {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.story-questions summary {
+  padding: 1.25rem 0;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.story-questions details p {
+  max-width: 720px;
+  padding-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+/* Источники и фокус */
+
+.story-sources {
+  padding-bottom: 2rem;
+}
+
+.story-sources p {
+  color: var(--text-muted);
+}
+
+.story-sources li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.story-page a:focus-visible,
+.story-page summary:focus-visible,
+#frameSlider:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 5px;
+}
+
+/* Адаптивность */
+
+@media (max-width: 991px) {
+  .story-editorial-grid,
+  .story-craft-grid {
+    gap: 2rem;
+  }
+
+  .story-people {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .story-section {
+    padding: 3rem 0;
+  }
+
+  .story-hero {
+    min-height: 80svh;
+    padding: 8rem 0 5rem;
+  }
+
+  .story-editorial-grid,
+  .story-craft-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-milestones {
+    padding-left: 1.25rem;
+  }
+
+  .story-hero-description {
+    font-size: 1rem;
+  }
+
+  .frame-stage {
+    height: 220px;
+  }
+
+  .frame-controls {
+    padding: 1rem;
+  }
+}
+
+.story-page .story-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 8, 25, 0.85),
+      rgba(12, 8, 25, 0.4)
+    ),
+    url("../images/wrid.jpeg") center / cover no-repeat;
+
+  color: #f5ebd8;
+}
+
+.story-page .story-hero .story-eyebrow,
+.story-page .story-hero-description {
+  color: #e0d5eb;
+}
+
+.story-page .story-hero-link {
+  color: #f5ebd8;
+}
+
+/* Уменьшаем промежутки на Behind the Story */
+.story-page .story-section {
+  padding-block: 1.25rem;
+}
+
+.story-page .story-section-heading {
+  margin-bottom: 1rem;
+}
+
+.story-page .story-section-heading > :first-child {
+  margin-top: 0;
+}
+
+.story-page .story-section-heading h2 {
+  margin-bottom: 0.75rem;
+}
+
+/* Скрываем оставшиеся подписи с номерами */
+.story-page .story-eyebrow,
+.story-page .story-section-heading:empty {
+  display: none;
+}
