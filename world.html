@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Coraline — The Other World</title>
+  <link rel="icon" href="data:,">
+
+  <script src="js/theme.js"></script>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top coraline-nav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Coraline</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#characters">
+              Characters
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              href="world.html"
+              aria-current="page"
+            >
+              Other World
+            </a>
+          </li>
+
+          <li class="nav-item d-flex align-items-center ms-lg-3">
+            <button
+              type="button"
+              class="theme-toggle"
+              aria-label="Switch to light mode"
+              aria-pressed="false"
+            >
+              ☀ Light
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="mainContent">
+    <!-- Галерея -->
+    <section
+      class="gallery-section"
+      id="locations"
+      aria-labelledby="locationsTitle"
+      style="padding-top: 7rem;"
+    >
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1 id="locationsTitle" class="gallery-section__title">
+            Step Through the Door
+          </h1>
+
+          <span
+            class="badge rounded-pill gallery-section__badge d-none d-lg-inline-block"
+          >
+            Scroll to explore
+          </span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gallery-card">
+              <video
+                class="card-img-top"
+                autoplay
+                loop
+                muted
+                playsinline
+                aria-label="The small door leading to the Other World"
+              >
+                <source src="media/дверььь.mp4" type="video/mp4">
+              </video>
+
+              <div class="card-body">
+                <p class="card-text">
+                  The small door behind the wallpaper — barely big
+                  enough to crawl through, and always locked
+                  during the day.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gallery-card">
+              <video
+                class="card-img-top"
+                autoplay
+                loop
+                muted
+                playsinline
+                aria-label="The magical garden in the Other World"
+              >
+                <source src="media/гарден.mp4" type="video/mp4">
+              </video>
+
+              <div class="card-body">
+                <p class="card-text">
+                  The Other Garden, blooming on command — every
+                  flower shaped exactly like Coraline's own face.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gallery-card">
+              <video
+                class="card-img-top"
+                autoplay
+                loop
+                muted
+                playsinline
+                aria-label="The mysterious world behind the mirror"
+              >
+                <source src="media/ужс.mp4" type="video/mp4">
+              </video>
+
+              <div class="card-body">
+                <p class="card-text">
+                  Behind the mirror — where the Other Mother
+                  keeps what's left of the children
+                  who came before.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Сравнение миров -->
+    <section
+      class="about-section"
+      id="comparison"
+      aria-labelledby="comparisonTitle"
+    >
+      <div class="container">
+        <h2 id="comparisonTitle" class="about-section__title">
+          Two Worlds, One House
+        </h2>
+
+        <p class="about-section__text">
+          On the surface, the Other World looks like everything
+          Coraline wished for. But every improvement hides a price.
+        </p>
+
+        <p
+          class="d-md-none"
+          style="color: var(--text-muted, #cfc4e8); font-size: 0.9rem;"
+        >
+          Swipe left to see the Other World →
+        </p>
+
+        <div
+          class="table-responsive"
+          role="region"
+          aria-label="Comparison of the Real World and the Other World"
+          tabindex="0"
+        >
+          <table class="comparison-table">
+            <caption>
+              A comparison of the real apartment and its Other version
+            </caption>
+
+            <thead>
+              <tr>
+                <th scope="col">What</th>
+                <th scope="col">Real World</th>
+                <th scope="col">Other World</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th scope="row">Parents</th>
+                <td>Busy, distracted, forget dinner</td>
+                <td>Attentive, playful, always free</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Garden</th>
+                <td>A few tired plants</td>
+                <td>Glowing, moves to entertain you</td>
+              </tr>
+
+              <tr>
+                <th scope="row">Neighbors</th>
+                <td>Odd, but harmless</td>
+                <td>Younger, talented, never tired</td>
+              </tr>
+
+              <tr>
+                <th scope="row">The catch</th>
+                <td>None — it's just ordinary life</td>
+                <td>Button eyes, and you can never leave</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Избранное -->
+    <section
+      class="favorites-section"
+      id="favorites"
+      aria-labelledby="favoritesTitle"
+    >
+      <div class="container">
+        <div class="favorites-heading">
+          <div>
+            <h2 id="favoritesTitle" class="favorites-title">
+              Your Favorite Characters
+            </h2>
+
+            <p id="favoritesCount" class="favorites-count">
+              0 characters saved
+            </p>
+          </div>
+
+          <button
+            type="button"
+            id="clearFavorites"
+            class="favorite-button favorites-clear"
+            hidden
+          >
+            Clear All
+          </button>
+        </div>
+
+        <p class="favorites-intro">
+          Your choices from the Home page are saved here.
+        </p>
+
+        <a
+          id="favoritesHomeLink"
+          class="favorites-link"
+          href="index.html#characters"
+        >
+          Choose characters →
+        </a>
+
+        <p
+          id="favoritesStatus"
+          class="favorites-status"
+          role="status"
+        ></p>
+
+        <div id="favoritesEmpty" class="favorites-empty">
+          <p>
+            No favorites yet. Visit the Home page and save
+            the characters you like.
+          </p>
+        </div>
+
+        <div
+          id="favoritesGrid"
+          class="characters__grid"
+        ></div>
+
+        <noscript>
+          <p>
+            Please enable JavaScript to view your saved characters.
+          </p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- Викторина -->
+    <section
+      class="quiz-section"
+      id="quiz"
+      aria-labelledby="quizTitle"
+    >
+      <div class="container">
+        <h2 id="quizTitle" class="quiz-section__title">
+          How Well Do You Know Coraline?
+        </h2>
+
+        <p class="quiz-section__subtitle">
+          Five questions. One mysterious world.
+          Can you get them all right?
+        </p>
+
+        <div class="quiz-box">
+          <p id="quizProgress" class="quiz-progress">
+            Question 1 of 5
+          </p>
+
+          <h3 id="quizQuestion" class="quiz-question">
+            Your question will appear here.
+          </h3>
+
+          <div id="quizAnswers" class="quiz-answers"></div>
+
+          <p
+            id="quizFeedback"
+            class="quiz-feedback"
+            aria-live="polite"
+          ></p>
+
+          <button
+            type="button"
+            id="quizNext"
+            class="btn contact-form__btn mt-3"
+            hidden
+          >
+            Next Question
+          </button>
+
+          <!-- Обновлённый результат -->
+          <div id="quizResult" class="quiz-result" hidden>
+            <p class="quiz-result-label">YOUR RESULT</p>
+
+            <div id="quizScoreRing" class="quiz-score-ring">
+              <span
+                id="quizPercentage"
+                class="quiz-percentage"
+              >
+                0%
+              </span>
+            </div>
+
+            <h3 id="quizResultTitle" tabindex="-1">
+              Your adventure is complete!
+            </h3>
+
+            <p id="quizScore"></p>
+
+            <p
+              id="quizResultMessage"
+              class="quiz-result-message"
+            ></p>
+
+            <button
+              type="button"
+              id="quizRestart"
+              class="btn contact-form__btn"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Контактная форма -->
+    <section
+      class="contact-section"
+      id="contact"
+      aria-labelledby="contactTitle"
+    >
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2 id="contactTitle" class="contact-section__title">
+              Send a Message to the Other World
+            </h2>
+
+            <p class="contact-section__subtitle">
+              Knock twice if you dare to write.
+            </p>
+
+            <form
+              class="contact-form mt-4"
+              id="contactForm"
+              novalidate
+            >
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="form-label">
+                    Your name *
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Coraline Jones"
+                    autocomplete="name"
+                    aria-describedby="nameError"
+                    required
+                  >
+
+                  <div
+                    class="invalid-feedback"
+                    id="nameError"
+                  ></div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">
+                    Your email *
+                  </label>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    aria-describedby="emailError"
+                    required
+                  >
+
+                  <div
+                    class="invalid-feedback"
+                    id="emailError"
+                  ></div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="age" class="form-label">
+                    Your age *
+                  </label>
+
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="age"
+                    placeholder="18"
+                    aria-describedby="ageError"
+                    required
+                  >
+
+                  <div
+                    class="invalid-feedback"
+                    id="ageError"
+                  ></div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="character" class="form-label">
+                    Favorite character *
+                  </label>
+
+                  <select
+                    class="form-select"
+                    id="character"
+                    aria-describedby="characterError"
+                    required
+                  >
+                    <option value="">Choose a character</option>
+                    <option value="Coraline">Coraline Jones</option>
+                    <option value="Wybie">Wybie Lovat</option>
+                    <option value="Cat">The Cat</option>
+                    <option value="Other Mother">The Other Mother</option>
+                  </select>
+
+                  <div
+                    class="invalid-feedback"
+                    id="characterError"
+                  ></div>
+                </div>
+
+                <div class="col-12">
+                  <label for="subject" class="form-label">
+                    Subject *
+                  </label>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    placeholder="A secret behind the door..."
+                    aria-describedby="subjectError"
+                    required
+                  >
+
+                  <div
+                    class="invalid-feedback"
+                    id="subjectError"
+                  ></div>
+                </div>
+
+                <div class="col-12">
+                  <label for="message" class="form-label">
+                    Message *
+                  </label>
+
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="4"
+                    placeholder="I found a door..."
+                    aria-describedby="messageError messageCounter"
+                    required
+                  ></textarea>
+
+                  <div
+                    class="invalid-feedback"
+                    id="messageError"
+                  ></div>
+
+                  <small
+                    id="messageCounter"
+                    class="d-block mt-1"
+                  >
+                    0 / 500 characters
+                  </small>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="agreement"
+                      aria-describedby="agreementError"
+                      required
+                    >
+
+                    <label
+                      class="form-check-label"
+                      for="agreement"
+                    >
+                      I promise not to accept buttons for eyes. *
+                    </label>
+
+                    <div
+                      class="invalid-feedback"
+                      id="agreementError"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button
+                    type="submit"
+                    class="btn contact-form__btn"
+                  >
+                    Send
+                  </button>
+
+                  <button
+                    type="reset"
+                    class="btn btn-outline-light ms-2"
+                  >
+                    Reset
+                  </button>
+                </div>
+
+                <div class="col-12">
+                  <div
+                    id="formSuccess"
+                    class="alert alert-success d-none"
+                    role="status"
+                  ></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Кнопка наверх -->
+  <div class="back-to-top-area">
+    <button
+      type="button"
+      id="backToTop"
+      class="back-to-top-button"
+    >
+      ↑ Back to top
+    </button>
+  </div>
+
+  <!-- Футер -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-layout">
+        <div class="footer-about">
+          <a class="footer-brand" href="index.html">
+            Coraline
+          </a>
+
+          <p>
+            A little door. A different world.
+            Be careful what you wish for.
+          </p>
+
+          <span class="footer-note">
+            An independent student fan project.
+          </span>
+        </div>
+
+        <nav
+          class="footer-navigation"
+          aria-label="Footer navigation"
+        >
+          <h2 class="footer-heading">Explore</h2>
+
+          <a href="index.html">Home</a>
+          <a href="index.html#characters">Characters</a>
+          <a href="world.html#favorites">Your favorites</a>
+          <a href="world.html#quiz">Take the quiz</a>
+        </nav>
+
+        <div class="footer-credits">
+          <h2 class="footer-heading">Credits</h2>
+
+          <p>
+            Characters and film imagery: Coraline (2009), LAIKA.
+            This website is not affiliated with the filmmakers.
+          </p>
+
+          <p>
+            Built with Bootstrap and jQuery.
+            Typeface: IM Fell English via Google Fonts.
+          </p>
+
+          <p>
+  All photos and video clips used on this website were
+  sourced from Pinterest. Original creators could not
+  be identified. Rights belong to their respective owners.
+</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>WEB Technologies 1 · Final Project</span>
+        <span>Made for learning. Inspired by Coraline.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>
