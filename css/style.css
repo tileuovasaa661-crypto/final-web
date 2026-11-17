@@ -1,1 +1,1563 @@
+html {
+  scroll-behavior: smooth;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+/* Главный экран */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 5, 30, 0.45);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #e9dfc7;
+  padding: 1.5rem;
+}
+
+.hero__subtitle {
+  font-family: "IM Fell English", serif;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero__title {
+  font-family: "IM Fell English", serif;
+  font-size: 48px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  color: #e9dfc7;
+  text-shadow:
+    2px 2px 0 #171717,
+    -1px -1px 0 #171717;
+  transform: rotate(-2deg);
+}
+
+@media (min-width: 37.5rem) {
+  .hero__title {
+    font-size: 100px;
+  }
+}
+
+/* Пуговица в названии */
+
+.button-letter {
+  display: inline-block;
+  position: relative;
+  width: 0.56em;
+  height: 0.56em;
+  margin: 0 0.04em;
+  vertical-align: 0.04em;
+  background-color: #1c1b4d;
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0.03em 0.05em rgba(0, 0, 0, 0.5),
+    0 0.02em 0.04em rgba(0, 0, 0, 0.35);
+}
+
+.button-letter .hole {
+  position: absolute;
+  width: 0.09em;
+  height: 0.09em;
+  background-color: #f1e9d2;
+  border-radius: 50%;
+}
+
+.button-letter .hole--tl {
+  top: 28%;
+  left: 28%;
+}
+
+.button-letter .hole--tr {
+  top: 28%;
+  left: 63%;
+}
+
+.button-letter .hole--bl {
+  top: 63%;
+  left: 28%;
+}
+
+.button-letter .hole--br {
+  top: 63%;
+  left: 63%;
+}
+
+.hero__btn {
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-family: "IM Fell English", serif;
+  font-size: 1.1rem;
+  background-color: rgba(20, 8, 35, 0.65);
+  color: #e9dfc7;
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.hero__btn:hover {
+  background-color: rgba(35, 12, 58, 0.85);
+  border-color: rgba(110, 40, 160, 0.5);
+  color: #f1e9d2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Персонажи */
+
+.characters {
+  position: relative;
+  padding: 4rem 1.5rem;
+  background-color: #14102a;
+  background-image:
+    linear-gradient(
+      115deg,
+      transparent 48%,
+      rgba(150, 90, 220, 0.15) 49%,
+      rgba(150, 90, 220, 0.15) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      25deg,
+      transparent 48%,
+      rgba(100, 120, 220, 0.12) 49%,
+      rgba(100, 120, 220, 0.12) 50%,
+      transparent 51%
+    ),
+    linear-gradient(
+      70deg,
+      transparent 48%,
+      rgba(150, 90, 220, 0.1) 49%,
+      rgba(150, 90, 220, 0.1) 50%,
+      transparent 51%
+    );
+  background-size: 18rem 18rem, 24rem 24rem, 14rem 14rem;
+  color: #e9dfc7;
+}
+
+.characters__title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.characters__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.char-card {
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.char-card__img {
+  width: 100%;
+  height: 16rem;
+  object-fit: contain;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.char-card__name {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.char-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #cfc4e8;
+}
+
+@media (min-width: 48rem) {
+  .characters__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .characters__title {
+    font-size: 2.25rem;
+    text-align: left;
+    max-width: 75rem;
+    margin: 0 auto 2.5rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  .characters__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Навигация */
+
+.coraline-nav {
+  background-color: rgba(20, 16, 42, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.coraline-nav .navbar-brand {
+  font-family: "IM Fell English", serif;
+  font-size: 1.4rem;
+  color: #e9dfc7;
+}
+
+.coraline-nav .nav-link {
+  color: #cfc4e8;
+  margin: 0 0.25rem;
+}
+
+.coraline-nav .nav-link:hover {
+  color: #e9dfc7;
+}
+
+/* О фильме */
+
+.about-section {
+  background-color: #14102a;
+  color: #e9dfc7;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.about-section__title {
+  font-family: "IM Fell English", serif;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-section__text {
+  color: #cfc4e8;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-section__img {
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+}
+
+/* Галерея Другого мира */
+
+.gallery-section {
+  background-color: #14102a;
+  color: #e9dfc7;
+}
+
+.gallery-section__title {
+  font-family: "IM Fell English", serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.gallery-section__badge {
+  background-color: rgba(150, 90, 220, 0.25);
+  color: #e9dfc7;
+  border: 1px solid rgba(150, 90, 220, 0.4);
+  font-weight: 400;
+  padding: 0.5rem 1rem;
+}
+
+.gallery-card {
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.gallery-card .card-body {
+  flex: 1;
+}
+
+.gallery-card .card-img-top {
+  height: 14rem;
+  object-fit: cover;
+}
+
+.gallery-card .card-text {
+  color: #cfc4e8;
+}
+
+/* Анимация карточек */
+
+@media (hover: hover) and (pointer: fine) {
+  .char-card:hover,
+  .gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: #a779d4;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Контактная форма */
+
+.contact-section {
+  background-color: #14102a;
+  color: #e9dfc7;
+  padding-bottom: 5rem;
+}
+
+.contact-section__title {
+  font-family: "IM Fell English", serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-section__subtitle {
+  color: #cfc4e8;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.contact-form .form-label {
+  color: #e9dfc7;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  color: #e9dfc7;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  background-color: rgba(30, 20, 55, 0.8);
+  border-color: rgba(150, 90, 220, 0.6);
+  color: #e9dfc7;
+  box-shadow: 0 0 0 0.2rem rgba(150, 90, 220, 0.2);
+}
+
+.contact-form .form-control::placeholder {
+  color: rgba(207, 196, 232, 0.5);
+}
+
+.contact-form .form-select option {
+  background-color: #14102a;
+  color: #e9dfc7;
+}
+
+/* Кнопки: белый текст во всех состояниях */
+
+.contact-form__btn {
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #653395;
+  --bs-btn-active-border-color: #b68be7;
+
+  padding: 0.6rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background-color: #7541a6;
+  color: #fff;
+  border: 1px solid #a779d4;
+  max-width: 100%;
+  white-space: normal;
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-form__btn:hover,
+.contact-form__btn:focus-visible {
+  color: #fff;
+  background-color: #8750b9;
+  border-color: #cfacf2;
+  box-shadow: 0 5px 18px rgba(130, 75, 185, 0.3);
+}
+
+.contact-form__btn:active,
+.contact-form__btn.btn:active,
+.contact-form__btn[aria-expanded="true"] {
+  color: #fff;
+  background-color: #653395;
+  border-color: #b68be7;
+}
+
+.contact-form__btn:active {
+  transform: translateY(1px);
+}
+
+.contact-form__btn:focus-visible {
+  outline: 2px solid #e9dfc7;
+  outline-offset: 4px;
+}
+
+/* Таблица сравнения */
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.comparison-table caption {
+  caption-side: bottom;
+  color: #cfc4e8;
+  font-style: italic;
+  margin-top: 0.75rem;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.comparison-table thead th {
+  color: #e9dfc7;
+  font-family: "IM Fell English", serif;
+  font-size: 1.1rem;
+  border-bottom: 2px solid rgba(150, 90, 220, 0.5);
+}
+
+.comparison-table tbody th {
+  color: #e9dfc7;
+  font-weight: 600;
+}
+
+.comparison-table tbody td {
+  color: #e9dfc7;
+}
+
+.comparison-table tbody tr {
+  border-bottom: 1px solid rgba(150, 90, 220, 0.2);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: rgba(150, 90, 220, 0.07);
+}
+
+/* Поиск и фильтр персонажей */
+
+.characters__search {
+  max-width: 75rem;
+  margin: 0 auto 2rem;
+}
+
+.characters__search .form-label {
+  color: #e9dfc7;
+  font-size: 1rem;
+}
+
+.characters__search .form-control,
+.characters__search .form-select {
+  max-width: 420px;
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  color: #e9dfc7;
+  padding: 0.75rem 1rem;
+}
+
+.characters__search .form-control:focus,
+.characters__search .form-select:focus {
+  background-color: rgba(30, 20, 55, 0.8);
+  border-color: rgba(150, 90, 220, 0.6);
+  color: #e9dfc7;
+  box-shadow: 0 0 0 0.2rem rgba(150, 90, 220, 0.2);
+}
+
+.characters__search .form-control::placeholder {
+  color: #a99bc8;
+}
+
+.characters__search .form-select option {
+  background-color: #14102a;
+  color: #e9dfc7;
+}
+
+#characterCount {
+  color: #cfc4e8;
+}
+
+/* Викторина */
+
+.quiz-section {
+  background-color: #14102a;
+  color: #e9dfc7;
+  padding: 4rem 0;
+}
+
+.quiz-section__title {
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-section__subtitle {
+  color: #cfc4e8;
+  margin-bottom: 2rem;
+}
+
+.quiz-box {
+  max-width: 800px;
+  padding: 2rem;
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  border-radius: 0.75rem;
+}
+
+.quiz-progress {
+  color: #cfc4e8;
+  margin-bottom: 1rem;
+}
+
+.quiz-question {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-answers {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quiz-answer {
+  background-color: rgba(20, 16, 42, 0.8);
+  color: #e9dfc7;
+  border: 1px solid rgba(150, 90, 220, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-family: Georgia, serif;
+  cursor: pointer;
+}
+
+.quiz-answer:hover {
+  background-color: rgba(150, 90, 220, 0.2);
+}
+
+.quiz-answer:focus-visible {
+  outline: 2px solid #e9dfc7;
+  outline-offset: 3px;
+}
+
+.quiz-answer:disabled {
+  cursor: default;
+}
+
+.quiz-answer.correct {
+  border-color: #75bb91;
+  background-color: rgba(50, 120, 75, 0.25);
+}
+
+.quiz-answer.incorrect {
+  border-color: #d88a9a;
+  background-color: rgba(140, 50, 75, 0.25);
+}
+
+.quiz-feedback {
+  margin-top: 1rem;
+  color: #e9dfc7;
+}
+
+.quiz-result {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .quiz-box {
+    padding: 1.25rem;
+  }
+
+  .quiz-question {
+    font-size: 1.2rem;
+  }
+}
+
+/* Секретные сообщения */
+
+.secret-section {
+  background-color: #14102a;
+  padding: 2rem 0 1rem;
+}
+
+.secret-message {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  color: #e9dfc7;
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  border-radius: 0.75rem;
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.secrets-info-section {
+  background-color: #14102a;
+  padding: 0 0 3rem;
+}
+
+.secrets-info {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: rgba(30, 20, 55, 0.6);
+  border: 1px solid rgba(110, 40, 160, 0.3);
+  border-radius: 0.75rem;
+  color: #e9dfc7;
+}
+
+.secrets-info h3 {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.secrets-info p {
+  color: #cfc4e8;
+  line-height: 1.6;
+}
+
+/* Общий фон обеих страниц */
+
+body:has(.gallery-section),
+body:has(.hero) {
+  background-color: #14102a;
+  background-image: repeating-linear-gradient(
+    125deg,
+    transparent 0,
+    transparent 180px,
+    rgba(140, 95, 200, 0.045) 181px,
+    transparent 183px
+  );
+  background-attachment: fixed;
+}
+
+body:has(.gallery-section) .gallery-section,
+body:has(.gallery-section) .about-section,
+body:has(.gallery-section) .secret-section,
+body:has(.gallery-section) .secrets-info-section,
+body:has(.gallery-section) .quiz-section,
+body:has(.gallery-section) .contact-section,
+body:has(.hero) .about-section,
+body:has(.hero) .characters {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Таблица на мобильных устройствах */
+
+@media (max-width: 575px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table {
+    min-width: 620px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem;
+    line-height: 1.6;
+  }
+
+  .about-section .container {
+    min-width: 0;
+  }
+
+  .about-section .table-responsive {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .about-section .comparison-table {
+    width: 620px;
+    min-width: 620px;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .comparison-table {
+    min-width: 650px;
+  }
+}
+
+/* Учитываем настройку уменьшения анимаций */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .char-card,
+  .gallery-card,
+  .contact-form__btn {
+    transition: none;
+  }
+
+  .char-card:hover,
+  .gallery-card:hover {
+    transform: none;
+  }
+}
+
+/* Викторина по центру страницы */
+.quiz-box {
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.quiz-section__title,
+.quiz-section__subtitle {
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Центрируем кнопки с секретами */
+.secret-section .container,
+.secrets-info-section .container {
+  text-align: center;
+}
+
+#secretButton,
+#secretsInfoButton {
+  width: 280px;
+  max-width: 100%;
+}
+
+/* Раскрытый текст остаётся удобным для чтения */
+.secret-message,
+.secrets-info {
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+/* Уменьшаем пустое пространство перед викториной */
+.secrets-info-section {
+  padding-bottom: 1rem;
+}
+
+.quiz-section {
+  padding-top: 2.5rem;
+}
+
+/* Приглушённая обводка карточек */
+.char-card,
+.gallery-card {
+  border-color: #30213f;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .char-card:hover,
+  .gallery-card:hover {
+    border-color: #50365f;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  }
+}
+
+
+.contact-form button[type="reset"] {
+  padding: 0.6rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  background-color: #21172f;
+  border: 1px solid #50365f;
+  color: #e9dfc7;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.contact-form button[type="reset"]:hover,
+.contact-form button[type="reset"]:active {
+  background-color: #352244;
+  border-color: #735087;
+  color: #fff;
+}
+
+.contact-form button[type="reset"]:focus-visible {
+  outline: 2px solid #cfc4e8;
+  outline-offset: 4px;
+  box-shadow: none;
+}
+
+/* Цвета тем */
+
+:root {
+  color-scheme: dark;
+
+  --page-bg: #14102a;
+  --surface: #1b142e;
+  --surface-hover: #251b3a;
+  --text-main: #e9dfc7;
+  --text-muted: #cfc4e8;
+  --text-placeholder: #a99bc8;
+  --border-color: #30213f;
+  --border-hover: #50365f;
+  --nav-bg: rgba(20, 16, 42, 0.95);
+  --stripe-color: rgba(150, 90, 220, 0.07);
+  --pattern-color: rgba(140, 95, 200, 0.045);
+  --accent: #7541a6;
+  --accent-hover: #8750b9;
+  --accent-active: #653395;
+  --accent-border: #a779d4;
+  --focus-color: #cfc4e8;
+  --card-shadow: rgba(0, 0, 0, 0.35);
+  --correct-bg: #19392b;
+  --correct-border: #75bb91;
+  --incorrect-bg: #492337;
+  --incorrect-border: #d88a9a;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --page-bg: #f3eef6;
+  --surface: #fffaf5;
+  --surface-hover: #eee3f3;
+  --text-main: #2c2038;
+  --text-muted: #5f4d6d;
+  --text-placeholder: #756180;
+  --border-color: #d6c7df;
+  --border-hover: #91729f;
+  --nav-bg: rgba(243, 238, 246, 0.96);
+  --stripe-color: rgba(117, 65, 166, 0.06);
+  --pattern-color: rgba(117, 65, 166, 0.07);
+  --accent: #704096;
+  --accent-hover: #603380;
+  --accent-active: #50286e;
+  --accent-border: #704096;
+  --focus-color: #704096;
+  --card-shadow: rgba(61, 35, 78, 0.15);
+  --correct-bg: #e0f1e5;
+  --correct-border: #377b4e;
+  --incorrect-bg: #f8e1e7;
+  --incorrect-border: #a3435d;
+}
+
+/* Общий фон */
+
+body,
+body:has(.hero),
+body:has(.gallery-section) {
+  background-color: var(--page-bg);
+  color: var(--text-main);
+}
+
+body:has(.hero),
+body:has(.gallery-section) {
+  background-image: repeating-linear-gradient(
+    125deg,
+    transparent 0,
+    transparent 180px,
+    var(--pattern-color) 181px,
+    transparent 183px
+  );
+}
+
+/* Навигация */
+
+.coraline-nav {
+  background-color: var(--nav-bg);
+}
+
+.coraline-nav .navbar-brand,
+.coraline-nav .nav-link.active,
+.coraline-nav .nav-link:hover {
+  color: var(--text-main);
+}
+
+.coraline-nav .nav-link {
+  color: var(--text-muted);
+}
+
+.coraline-nav .navbar-toggler {
+  border-color: var(--border-hover);
+}
+
+:root[data-theme="light"] .navbar-toggler-icon {
+  filter: brightness(0);
+}
+
+/* Переключатель темы */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  background-color: var(--surface);
+  color: var(--text-main);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--surface-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+@media (max-width: 991px) {
+  .theme-toggle {
+    margin: 0.75rem 0;
+  }
+}
+
+/* Заголовки и основной текст */
+
+.characters,
+.about-section,
+.gallery-section,
+.contact-section,
+.quiz-section {
+  color: var(--text-main);
+}
+
+.about-section__text,
+.char-card__desc,
+.gallery-card .card-text,
+.contact-section__subtitle,
+.quiz-section__subtitle,
+.quiz-progress,
+.secrets-info p,
+#characterCount,
+.comparison-table caption {
+  color: var(--text-muted);
+}
+
+.characters__search .form-label,
+.contact-form .form-label,
+.comparison-table thead th,
+.comparison-table tbody th,
+.comparison-table tbody td {
+  color: var(--text-main);
+}
+
+/* Карточки и раскрытые сообщения */
+
+.char-card,
+.gallery-card,
+.quiz-box,
+.secret-message,
+.secrets-info {
+  background-color: var(--surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.gallery-section__badge {
+  background-color: var(--surface-hover);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .char-card:hover,
+  .gallery-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 24px var(--card-shadow);
+  }
+}
+
+/* Поля формы, поиск и фильтр */
+
+.contact-form .form-control,
+.contact-form .form-select,
+.characters__search .form-control,
+.characters__search .form-select {
+  background-color: var(--surface);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus,
+.characters__search .form-control:focus,
+.characters__search .form-select:focus {
+  background-color: var(--surface);
+  border-color: var(--border-hover);
+  color: var(--text-main);
+  box-shadow: 0 0 0 0.2rem var(--stripe-color);
+}
+
+.contact-form .form-control::placeholder,
+.characters__search .form-control::placeholder {
+  color: var(--text-placeholder);
+}
+
+.contact-form .form-select option,
+.characters__search .form-select option {
+  background-color: var(--surface);
+  color: var(--text-main);
+}
+
+:root[data-theme="light"] .form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%232c2038' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+/* Ошибки формы */
+
+.contact-form .form-control.is-invalid,
+.contact-form .form-select.is-invalid,
+.contact-form .form-check-input.is-invalid {
+  border-color: var(--incorrect-border);
+}
+
+.contact-form .invalid-feedback {
+  color: var(--incorrect-border);
+}
+
+/* Кнопки */
+
+.contact-form__btn {
+  background-color: var(--accent);
+  border-color: var(--accent-border);
+  color: #fff;
+}
+
+.contact-form__btn:hover,
+.contact-form__btn:focus-visible {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-border);
+  color: #fff;
+}
+
+.contact-form__btn:active,
+.contact-form__btn.btn:active,
+.contact-form__btn[aria-expanded="true"] {
+  background-color: var(--accent-active);
+  border-color: var(--accent-border);
+  color: #fff;
+}
+
+.contact-form__btn:focus-visible {
+  outline-color: var(--focus-color);
+}
+
+.contact-form button[type="reset"] {
+  background-color: var(--surface);
+  border-color: var(--border-hover);
+  color: var(--text-main);
+}
+
+.contact-form button[type="reset"]:hover,
+.contact-form button[type="reset"]:active {
+  background-color: var(--surface-hover);
+  border-color: var(--border-hover);
+  color: var(--text-main);
+}
+
+.contact-form button[type="reset"]:focus-visible {
+  outline-color: var(--focus-color);
+}
+
+/* Таблица */
+
+.comparison-table thead th {
+  border-bottom-color: var(--border-hover);
+}
+
+.comparison-table tbody tr {
+  border-bottom-color: var(--border-color);
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: var(--stripe-color);
+}
+
+/* Викторина */
+
+.quiz-answer {
+  background-color: var(--surface);
+  border-color: var(--border-hover);
+  color: var(--text-main);
+}
+
+.quiz-answer:hover {
+  background-color: var(--surface-hover);
+}
+
+.quiz-answer:focus-visible {
+  outline-color: var(--focus-color);
+}
+
+.quiz-answer.correct {
+  background-color: var(--correct-bg);
+  border-color: var(--correct-border);
+}
+
+.quiz-answer.incorrect {
+  background-color: var(--incorrect-bg);
+  border-color: var(--incorrect-border);
+}
+
+.quiz-feedback {
+  color: var(--text-main);
+}
+
+/* Подсказка под таблицей с цветом, указанным в HTML */
+
+:root[data-theme="light"] #comparison .d-md-none {
+  color: var(--text-muted) !important;
+}
+
+/* Уменьшение анимаций */
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}
+
+/* Избранные персонажи */
+
+#characters,
+#favorites {
+  scroll-margin-top: 6rem;
+}
+
+.char-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.char-card__img {
+  flex-shrink: 0;
+}
+
+.favorite-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  margin-top: auto;
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  background-color: var(--surface);
+  color: var(--text-main);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.favorite-button:hover {
+  background-color: var(--surface-hover);
+}
+
+.favorite-button[aria-pressed="true"] {
+  background-color: var(--accent-active);
+  border-color: var(--accent-border);
+  color: #fff;
+}
+
+.favorite-button:focus-visible,
+.favorites-link:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+.favorites-section {
+  padding: 3rem 0;
+  color: var(--text-main);
+}
+
+.favorites-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.favorites-title {
+  margin-bottom: 0.5rem;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 2rem;
+}
+
+.favorites-count,
+.favorites-intro {
+  color: var(--text-muted);
+}
+
+.favorites-clear {
+  margin-top: 0;
+}
+
+.favorites-link {
+  display: inline-block;
+  padding-block: 0.5rem;
+  color: var(--text-main);
+  text-underline-offset: 4px;
+}
+
+.favorites-link:hover {
+  color: var(--text-muted);
+}
+
+.favorites-status {
+  max-width: 75rem;
+  margin: 1rem auto;
+  color: var(--text-muted);
+}
+
+.favorites-status:empty {
+  margin: 0;
+}
+
+.favorites-empty {
+  padding: 2rem;
+  border: 1px dashed var(--border-hover);
+  border-radius: 0.75rem;
+  background-color: var(--surface);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.favorites-empty p {
+  margin: 0;
+}
+
+.characters-empty {
+  grid-column: 1 / -1;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favorite-button {
+    transition: none;
+  }
+}
+
+/* Дополнительная информация о персонаже */
+
+.read-more-button {
+  align-self: center;
+  padding: 0.4rem 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
+
+.read-more-button:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-main);
+}
+
+.read-more-button:focus-visible,
+.back-to-top-button:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+.character-details {
+  margin-bottom: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.favorite-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+/* Возвращение наверх */
+
+.back-to-top-area {
+  padding: 1.5rem 1rem 3rem;
+  text-align: center;
+}
+
+.back-to-top-button {
+  min-height: 44px;
+  padding: 0.65rem 1.5rem;
+  border: 1px solid var(--border-hover);
+  border-radius: 999px;
+  background-color: var(--surface);
+  color: var(--text-main);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.back-to-top-button:hover {
+  background-color: var(--surface-hover);
+}
+
+.back-to-top-button:disabled {
+  cursor: wait;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top-button {
+    transition: none;
+  }
+}
+/* Карточка не смещает кнопку под курсором при наведении */
+@media (hover: hover) and (pointer: fine) {
+  .char-card:hover {
+    transform: none;
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 24px var(--card-shadow);
+  }
+}
+
+/* Атрибут hidden должен скрывать элементы с display: flex */
+[hidden] {
+  display: none !important;
+}
+
+#about,
+#characters,
+#favorites,
+#quiz,
+#contact {
+  scroll-margin-top: 6rem;
+}
+
+/* Футер */
+
+.site-footer {
+  padding: 3rem 0 1.25rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--surface);
+  color: var(--text-main);
+}
+
+.footer-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr 1.2fr;
+  gap: 2.5rem;
+}
+
+.footer-layout > * {
+  min-width: 0;
+}
+
+.footer-brand {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 2rem;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.footer-about p,
+.footer-credits p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer-note {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.footer-heading {
+  margin-bottom: 1rem;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.footer-navigation .footer-heading {
+  margin-bottom: 0.35rem;
+}
+
+.footer-navigation a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.footer-navigation a:hover,
+.footer-brand:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Результат викторины */
+
+.quiz-result {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.quiz-result-label {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+}
+
+.quiz-score-ring {
+  --score-angle: 0deg;
+
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.75rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--accent) 0deg var(--score-angle),
+    var(--border-color) var(--score-angle) 360deg
+  );
+}
+
+.quiz-score-ring::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  background-color: var(--surface);
+}
+
+.quiz-percentage {
+  position: relative;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 2.75rem;
+  color: var(--text-main);
+}
+
+#quizResultTitle {
+  margin-bottom: 1rem;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--text-main);
+}
+
+#quizScore,
+.quiz-result-message {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.quiz-result-message {
+  max-width: 440px;
+  margin: 0 auto 1.75rem;
+}
+
+@media (max-width: 767px) {
+  .footer-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
